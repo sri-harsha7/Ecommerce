@@ -1,6 +1,7 @@
 const Footer = () => {
   return (
-    <div className="px-40 p-20 text-2xl">
+    <div className=" flex flex-col  items-center text-2xl mt-10 w-full">
+      {/* px-40 p-20 */}
       <ul className="flex justify-center items-center  gap-20 cursor-pointer text-[#47579E]">
         <li> About us</li>
         <li> Contact us</li>

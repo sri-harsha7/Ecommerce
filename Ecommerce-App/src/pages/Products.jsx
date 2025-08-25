@@ -1,106 +1,3 @@
-// import { useState } from "react";
-// import Slider from "@mui/material/Slider";
-// import ProductCard from "../components/ProductCard";
-
-// const Products = () => {
-//   const products = [
-//     {
-//       id: 1,
-//       title: "Product 1",
-//       description: "This is the description of Product 1.",
-//       price: 19.99,
-//       image:
-//         "https://image.hm.com/assets/hm/7e/3f/7e3f24c5c31585b1a07703f2c49a60a3bc357cc3.jpg?imwidth=1536",
-//       rating: 4.5,
-//     },
-//     {
-//       id: 2,
-//       title: "Product 2",
-//       description: "This is the description of Product 2.",
-//       price: 29.99,
-//       image:
-//         "https://image.hm.com/assets/hm/0e/12/0e12de5ebb1c6198d1a91503713819d0090d1032.jpg?imwidth=1536",
-//       rating: 4.0,
-//     },
-//     {
-//       id: 3,
-//       title: "Product 3",
-//       description: "This is the description of Product 3.",
-//       price: 39.99,
-//       image:
-//         "https://image.hm.com/assets/hm/53/23/53233edc608e047612a0467e157f9d1acd1b65fa.jpg?imwidth=1536",
-//       rating: 3.5,
-//     },
-//     {
-//       id: 4,
-//       title: "Product 4",
-//       description: "This is the description of Product 4.",
-//       price: 49.99,
-//       image:
-//         "https://image.hm.com/assets/hm/13/b7/13b7a698018742d446494be3af98f23ade6f56fc.jpg?imwidth=1536",
-//       rating: 4.5,
-//     },
-//   ];
-//   const [price, setPrice] = useState([200]);
-//   const [rating, setRating] = useState([4]);
-//   return (
-//     <div>
-//       <main className="flex flex-1">
-//         {/* Sidebar Filters */}
-//         <aside className="w-64 p-6 border-r bg-white">
-//           <h2 className="font-semibold mb-4">Filters</h2>
-
-//           <div className="mb-6">
-//             <label className="block mb-2 font-medium">Category</label>
-//             <select className="w-full border rounded-lg p-2">
-//               <option>All</option>
-//               <option>Clothing</option>
-//               <option>Accessories</option>
-//               <option>Shoes</option>
-//             </select>
-//           </div>
-
-//           <div className="mb-6">
-//             <label className="block mb-2 font-medium">Price</label>
-//             <Slider
-//               value={price}
-//               onValueChange={setPrice}
-//               max={500}
-//               step={10}
-//             />
-//           </div>
-
-//           <div className="mb-6">
-//             <label className="block mb-2 font-medium">Brand</label>
-//             <select className="w-full border rounded-lg p-2">
-//               <option>All</option>
-//               <option>Brand A</option>
-//               <option>Brand B</option>
-//               <option>Brand C</option>
-//             </select>
-//           </div>
-
-//           <div>
-//             <label className="block mb-2 font-medium">Rating</label>
-//             <Slider value={rating} onValueChange={setRating} max={5} step={1} />
-//             <span className="text-sm mt-1 inline-block">{rating}</span>
-//           </div>
-//         </aside>
-
-//         {/* Products Section */}
-//         <section className="flex-1 p-8">
-//           <h2 className="text-2xl font-bold mb-6">All Products</h2>
-
-//           <div className="flex flex-wrap">
-//             <ProductCard Products={products}></ProductCard>
-//           </div>
-//         </section>
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default Products;
 import { useState } from "react";
 import Slider from "@mui/material/Slider";
 import ProductCard from "../components/ProductCard";
@@ -109,81 +6,153 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: "Product 1",
-      description: "This is the description of Product 1.",
-      price: 19.99,
+      title: "Cotton T-Shirt",
+      description: "Comfortable cotton t-shirt for daily wear.",
+      price: 1999,
+      discount: 20, // 20% discount
       image:
         "https://image.hm.com/assets/hm/7e/3f/7e3f24c5c31585b1a07703f2c49a60a3bc357cc3.jpg?imwidth=1536",
       rating: 4.5,
+      category: "Clothing",
+      brand: "Brand A",
     },
     {
       id: 2,
-      title: "Product 2",
-      description: "This is the description of Product 2.",
-      price: 29.99,
+      title: "Designer Jeans",
+      description: "Premium quality designer jeans.",
+      price: 2999,
+      discount: 15, // 15% discount
       image:
         "https://image.hm.com/assets/hm/0e/12/0e12de5ebb1c6198d1a91503713819d0090d1032.jpg?imwidth=1536",
       rating: 4.0,
+      category: "Clothing",
+      brand: "Brand B",
     },
     {
       id: 3,
-      title: "Product 3",
-      description: "This is the description of Product 3.",
-      price: 39.99,
+      title: "Leather Watch",
+      description: "Stylish leather strap watch.",
+      price: 3999,
+      discount: 25, // 25% discount
       image:
         "https://image.hm.com/assets/hm/53/23/53233edc608e047612a0467e157f9d1acd1b65fa.jpg?imwidth=1536",
       rating: 3.5,
+      category: "Accessories",
+      brand: "Brand C",
     },
     {
       id: 4,
-      title: "Product 4",
-      description: "This is the description of Product 4.",
-      price: 49.99,
+      title: "Running Shoes",
+      description: "Comfortable running shoes for sports.",
+      price: 4999,
+      discount: 30, // 30% discount
       image:
         "https://image.hm.com/assets/hm/13/b7/13b7a698018742d446494be3af98f23ade6f56fc.jpg?imwidth=1536",
       rating: 4.5,
+      category: "Shoes",
+      brand: "Brand A",
     },
     {
-      id: 1,
-      title: "Product 1",
-      description: "This is the description of Product 1.",
-      price: 19.99,
+      id: 5,
+      title: "Casual Shirt",
+      description: "Light casual shirt for office wear.",
+      price: 2499,
+      discount: 10, // 10% discount
       image:
         "https://image.hm.com/assets/hm/7e/3f/7e3f24c5c31585b1a07703f2c49a60a3bc357cc3.jpg?imwidth=1536",
-      rating: 4.5,
+      rating: 4.2,
+      category: "Clothing",
+      brand: "Brand B",
     },
     {
-      id: 2,
-      title: "Product 2",
-      description: "This is the description of Product 2.",
-      price: 29.99,
+      id: 6,
+      title: "Sunglasses",
+      description: "UV protection sunglasses.",
+      price: 2799,
+      discount: 35, // 35% discount
       image:
         "https://image.hm.com/assets/hm/0e/12/0e12de5ebb1c6198d1a91503713819d0090d1032.jpg?imwidth=1536",
-      rating: 4.0,
+      rating: 4.1,
+      category: "Accessories",
+      brand: "Brand C",
     },
     {
-      id: 3,
-      title: "Product 3",
-      description: "This is the description of Product 3.",
-      price: 39.99,
+      id: 7,
+      title: "Formal Shoes",
+      description: "Premium leather formal shoes.",
+      price: 5499,
+      discount: 18, // 18% discount
       image:
         "https://image.hm.com/assets/hm/53/23/53233edc608e047612a0467e157f9d1acd1b65fa.jpg?imwidth=1536",
-      rating: 3.5,
+      rating: 4.3,
+      category: "Shoes",
+      brand: "Brand A",
     },
     {
-      id: 4,
-      title: "Product 4",
-      description: "This is the description of Product 4.",
-      price: 49.99,
+      id: 8,
+      title: "Backpack",
+      description: "Spacious backpack for travel.",
+      price: 3499,
+      discount: 0, // No discount
       image:
         "https://image.hm.com/assets/hm/13/b7/13b7a698018742d446494be3af98f23ade6f56fc.jpg?imwidth=1536",
-      rating: 4.5,
+      rating: 4.4,
+      category: "Accessories",
+      brand: "Brand B",
     },
   ];
 
-  // ✅ Use numbers instead of arrays
-  const [price, setPrice] = useState(200);
-  const [rating, setRating] = useState(4);
+  // Filter states
+  const [price, setPrice] = useState(6000);
+  const [rating, setRating] = useState(1);
+  const [category, setCategory] = useState("All");
+  const [brand, setBrand] = useState("All");
+  const [sortBy, setSortBy] = useState("default");
+
+  // Filter and sort logic
+  const getFilteredAndSortedProducts = () => {
+    // First filter the products
+    let filtered = products.filter((product) => {
+      // Handle products without discount or discount = 0
+      const discount = product.discount || 0;
+      const discountedPrice = product.price * (1 - discount / 100);
+      const priceFilter = discountedPrice <= price;
+      const ratingFilter = product.rating >= rating;
+      const categoryFilter =
+        category === "All" || product.category === category;
+      const brandFilter = brand === "All" || product.brand === brand;
+
+      return priceFilter && ratingFilter && categoryFilter && brandFilter;
+    });
+
+    // Then sort the filtered products
+    switch (sortBy) {
+      case "price-low-high":
+        return filtered.sort((a, b) => {
+          const aDiscount = a.discount || 0;
+          const bDiscount = b.discount || 0;
+          const aDiscounted = a.price * (1 - aDiscount / 100);
+          const bDiscounted = b.price * (1 - bDiscount / 100);
+          return aDiscounted - bDiscounted;
+        });
+      case "price-high-low":
+        return filtered.sort((a, b) => {
+          const aDiscount = a.discount || 0;
+          const bDiscount = b.discount || 0;
+          const aDiscounted = a.price * (1 - aDiscount / 100);
+          const bDiscounted = b.price * (1 - bDiscount / 100);
+          return bDiscounted - aDiscounted;
+        });
+      case "rating-high-low":
+        return filtered.sort((a, b) => b.rating - a.rating);
+      case "discount-high-low":
+        return filtered.sort((a, b) => (b.discount || 0) - (a.discount || 0));
+      default:
+        return filtered;
+    }
+  };
+
+  const filteredProducts = getFilteredAndSortedProducts();
 
   return (
     <div>
@@ -194,54 +163,92 @@ const Products = () => {
 
           <div className="mb-6">
             <label className="block mb-2 font-medium">Category</label>
-            <select className="w-full border rounded-lg p-2">
-              <option>All</option>
-              <option>Clothing</option>
-              <option>Accessories</option>
-              <option>Shoes</option>
+            <select
+              className="w-full border rounded-lg p-2"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Shoes">Shoes</option>
             </select>
           </div>
 
           <div className="mb-6">
-            <label className="block mb-2 font-medium">Price</label>
+            <label className="block mb-2 font-medium">Price (Max)</label>
             <Slider
               value={price}
-              onChange={(e, newValue) => setPrice(newValue)} // ✅ FIXED
-              max={500}
-              step={10}
+              onChange={(e, newValue) => setPrice(newValue)}
+              min={1000}
+              max={6000}
+              step={100}
             />
-            <span className="text-sm mt-1 inline-block">${price}</span>
+            <span className="text-sm mt-1 inline-block">₹{price}</span>
           </div>
 
           <div className="mb-6">
             <label className="block mb-2 font-medium">Brand</label>
-            <select className="w-full border rounded-lg p-2">
-              <option>All</option>
-              <option>Brand A</option>
-              <option>Brand B</option>
-              <option>Brand C</option>
+            <select
+              className="w-full border rounded-lg p-2"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Brand A">Brand A</option>
+              <option value="Brand B">Brand B</option>
+              <option value="Brand C">Brand C</option>
             </select>
           </div>
 
-          <div>
-            <label className="block mb-2 font-medium">Rating</label>
+          <div className="mb-6">
+            <label className="block mb-2 font-medium">Rating (Min)</label>
             <Slider
               value={rating}
-              onChange={(e, newValue) => setRating(newValue)} // ✅ FIXED
+              onChange={(e, newValue) => setRating(newValue)}
+              min={1}
               max={5}
-              step={1}
+              step={0.5}
             />
-            <span className="text-sm mt-1 inline-block">{rating} ⭐</span>
+            <span className="text-sm mt-1 inline-block">
+              {rating} ⭐ & above
+            </span>
+          </div>
+
+          <div className="mb-6">
+            <label className="block mb-2 font-medium">Sort By</label>
+            <select
+              className="w-full border rounded-lg p-2"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              <option value="default">Default</option>
+              <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
+              <option value="rating-high-low">Rating: High to Low</option>
+              <option value="discount-high-low">Discount: High to Low</option>
+            </select>
+          </div>
+
+          {/* Filter Results Summary */}
+          <div className="mt-6 p-3 bg-gray-100 rounded-lg">
+            <p className="text-sm font-medium">
+              Showing {filteredProducts.length} of {products.length} products
+            </p>
           </div>
         </aside>
 
         {/* Products Section */}
         <section className="flex-1 p-8">
-          <h2 className="text-2xl font-bold mb-6">All Products</h2>
-
-          <div className="flex flex-wrap">
-            <ProductCard Products={products}></ProductCard>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold">All Products</h2>
+            <p className="text-gray-600">
+              {filteredProducts.length} products found
+            </p>
           </div>
+
+          {/* Pass filtered products to your ProductCard component */}
+          <ProductCard Products={filteredProducts} />
         </section>
       </main>
     </div>

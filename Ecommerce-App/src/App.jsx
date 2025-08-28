@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <BrowserRouter>
         <NavBar />
         <div className="flex-1">
@@ -24,7 +24,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
